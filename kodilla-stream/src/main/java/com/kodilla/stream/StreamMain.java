@@ -1,21 +1,18 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.lambda.ExecuteSaySomething;
-import com.kodilla.stream.lambda.Processor;
-import com.kodilla.stream.lambda.SaySomething;
+import com.kodilla.stream.beautifier.PoemBeautifier;
 
-import java.io.InputStream;
-import java.io.OutputStream;
+import static jdk.nashorn.internal.objects.NativeString.toLowerCase;
+import static jdk.nashorn.internal.objects.NativeString.toUpperCase;
 
 public class StreamMain {
     public static void main(String[] args) {
-//        System.out.println("Welcome to module 7 - Stream");
-//
-//        SaySomething saySomething = new SaySomething();
-//        saySomething.say();
+        PoemBeautifier poemBeautifier = new PoemBeautifier();
 
-        Processor processor = new Processor();
-        ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        processor.execute(executeSaySomething);
+        poemBeautifier.beautify("Przykładowy tekst do upiększenia", text -> "ABC " + text + " ABC");
+        poemBeautifier.beautify("Inny tekst poddany upiększaniu.", text -> toUpperCase(text));
+        poemBeautifier.beautify("yuppi", text -> "@_### " + text + " ###_@");
+        poemBeautifier.beautify("Przykładowy tekst do upiększenia", text -> "Mały tekst: " + toLowerCase(text) + " i duży tekst " + toUpperCase(text) + " koniec tekstów.");
+        poemBeautifier.beautify("Inny tekst poddany Upiększaniu", text -> "& " + toLowerCase(text) + " &");
     }
 }
