@@ -20,10 +20,8 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-//        BookLibrary bookLibrary = new BookLibrary(getLibraryDatabase());
-//        List<Book> theListOfBooks = bookLibrary.listBooksInHandsOf(libraryUser);
-//        return theListOfBooks;
-        return null;
+        List<Book> theListOfBooks = libraryDatabase.listBooksInHandsOf(libraryUser);
+        return theListOfBooks;
     }
 
     public LibraryDatabase getLibraryDatabase() {

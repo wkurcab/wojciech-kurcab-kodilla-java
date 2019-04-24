@@ -1,11 +1,5 @@
 package com.kodilla.testing.forum.statistics;
 
-import com.kodilla.testing.forum.ForumComment;
-import com.kodilla.testing.forum.ForumPost;
-import com.kodilla.testing.forum.ForumUser;
-import com.kodilla.testing.forum.statistics.AdvStatistics;
-import com.kodilla.testing.forum.statistics.Statistics;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,43 +7,145 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class AdvStatisticsTestSuite {
     @Test
-    public void testAdvStatisticsWithMock() {
+    public void testAdvStatisticsWithMock100Users() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        AdvStatistics advStatistics = new AdvStatistics(statisticsMock);
-        List<ForumUser> resultListOf1000Users = forumUserList(5);
-//        //When
-//        double result = resultListOf1000Users.size() / advStatistics.calculateAdvStatistics(statisticsMock).postsCount();
-//        //Then
-//        Assert.assertEquals(0, result);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf100Users = forumUserList(100);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf100Users);
+        when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(30);
+
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(100, advStatistics.getUsersCount());
+        Assert.assertEquals(0, advStatistics.getPostCount());
+        Assert.assertEquals(30, advStatistics.getCommentCount());
+        Assert.assertEquals(0, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(0.3, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(0, advStatistics.getAverageCommentsPerPost(), 0.001);
     }
 
-    private List<ForumUser> forumUserList(int count) {
-        List<ForumUser> resultList = new ArrayList<>();
-        for (int n = 1; n <= count; n++) {
-            ForumUser forumUser = new ForumUser("Name" + n, "John Smith" + n);
-            resultList.add(forumUser);
-        }
-        return resultList;
+    @Test
+    public void testAdvStatisticsWithMock0Users() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf0Users = forumUserList(0);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf0Users);
+        when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(30);
+
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(0, advStatistics.getUsersCount());
+        Assert.assertEquals(0, advStatistics.getPostCount());
+        Assert.assertEquals(30, advStatistics.getCommentCount());
+        Assert.assertEquals(0, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(0, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(0, advStatistics.getAverageCommentsPerPost(), 0.001);
     }
 
-//    private List<ForumComment> forumCommentList(int count) {
-//        List<ForumComment> resultList = new ArrayList<>();
-//        for (int n = 1; n <= count; n++) {
-//            ForumComment forumComment = new ForumComment(0 + n,"Comment Body" + n, "John Smith" + n);
-//            resultList.add(forumComment);
-//        }
-//        return resultList;
-//    }
+    @Test
+    public void testAdvStatisticsWithMock0Posts() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf100Users = forumUserList(100);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf100Users);
+        when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(200);
 
-    private List<ForumPost> forumPostList(int count) {
-        List<ForumPost> resultList = new ArrayList<>();
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(100, advStatistics.getUsersCount());
+        Assert.assertEquals(0, advStatistics.getPostCount());
+        Assert.assertEquals(200, advStatistics.getCommentCount());
+        Assert.assertEquals(0, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(2.0, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(0, advStatistics.getAverageCommentsPerPost(), 0.001);
+    }
+
+    @Test
+    public void testAdvStatisticsWithMock1000Posts() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf100Users = forumUserList(100);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf100Users);
+        when(statisticsMock.postsCount()).thenReturn(1000);
+        when(statisticsMock.commentsCount()).thenReturn(30);
+
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(100, advStatistics.getUsersCount());
+        Assert.assertEquals(1000, advStatistics.getPostCount());
+        Assert.assertEquals(30, advStatistics.getCommentCount());
+        Assert.assertEquals(10, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(0.3, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(0.03, advStatistics.getAverageCommentsPerPost(), 0.001);
+    }
+
+    @Test
+    public void testAdvStatisticsWithMockCommentsLessThanPosts() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf100Users = forumUserList(100);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf100Users);
+        when(statisticsMock.postsCount()).thenReturn(50);
+        when(statisticsMock.commentsCount()).thenReturn(30);
+
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(100, advStatistics.getUsersCount());
+        Assert.assertEquals(50, advStatistics.getPostCount());
+        Assert.assertEquals(30, advStatistics.getCommentCount());
+        Assert.assertEquals(0.5, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(0.3, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(0.6, advStatistics.getAverageCommentsPerPost(), 0.001);
+    }
+
+    @Test
+    public void testAdvStatisticsWithMockCommentsMoreThanPosts() {
+        //Given
+        Statistics statisticsMock = mock(Statistics.class);
+        AdvStatistics advStatistics = new AdvStatistics();
+        List<String> resultListOf100Users = forumUserList(100);
+        when(statisticsMock.usersNames()).thenReturn(resultListOf100Users);
+        when(statisticsMock.postsCount()).thenReturn(10);
+        when(statisticsMock.commentsCount()).thenReturn(30);
+
+        //When
+        advStatistics.calculateAdvStatistics(statisticsMock);
+
+        //Then
+        Assert.assertEquals(100, advStatistics.getUsersCount());
+        Assert.assertEquals(10, advStatistics.getPostCount());
+        Assert.assertEquals(30, advStatistics.getCommentCount());
+        Assert.assertEquals(0.1, advStatistics.getAveragePostsPerUser(), 0.001);
+        Assert.assertEquals(0.3, advStatistics.getAverageCommentsPerUser(), 0.001);
+        Assert.assertEquals(3, advStatistics.getAverageCommentsPerPost(), 0.001);
+    }
+
+    private List<String> forumUserList(int count) {
+        List<String> resultList = new ArrayList<>();
         for (int n = 1; n <= count; n++) {
-            ForumPost forumPost = new ForumPost("Post Body" + n, "John Smith" + n);
-            resultList.add(forumPost);
+            resultList.add("Name" + n);
         }
         return resultList;
     }
