@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FindFlight {
-    public String findFlight(Flight flight) throws RouteNotFoundException {
+    public Boolean findFlight(Flight flight) throws RouteNotFoundException {
         Map<String, Boolean> airport = new HashMap<>();
         airport.put("Paris", true);
         airport.put("Tokio", true);
@@ -14,8 +14,8 @@ public class FindFlight {
         airport.put("Pekin", false);
 
         Boolean result = airport.get(flight.arrivalAirport);
-        if (result && result != null) {
-            return flight.arrivalAirport;
+        if (result != null) {
+            return result;
         } else {
             throw new RouteNotFoundException("Error");
         }
