@@ -17,7 +17,7 @@ public final class Forum {
         theForumUser.add(new ForumUser(911, "Steven Stamkos", 'M', 1990, 2, 7, 194));
         theForumUser.add(new ForumUser(9, "Molly Petterson", 'F', 1979, 10, 5, 5));
         theForumUser.add(new ForumUser(10, "Wendy Cole", 'F', 2000, 6, 14, 155));
-        theForumUser.add(new ForumUser(11, "Mark Morano", 'M', 1999, 11, 5, 13));
+        theForumUser.add(new ForumUser(11, "Mark Morano", 'M', 1999, 5, 3, 13));
         theForumUser.add(new ForumUser(12, "Holly Webb", 'F', 1996, 3, 1, 1455));
     }
 
