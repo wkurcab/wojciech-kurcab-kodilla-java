@@ -4,12 +4,11 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.chrono.ChronoLocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.*;
 
 public class BoardTestSuite {
     public Board prepareTestData() {
@@ -156,14 +155,19 @@ public class BoardTestSuite {
                 .map(t -> t.getCreated())
                 .filter(d -> d.compareTo(LocalDate.now()) <= 0)
                 .count();
-//        long sumDaysTasks = project.getTaskLists().stream()
-//                .filter(inProgressTasks::contains)
-//                .flatMap(tl -> tl.getTasks().stream())
-//                .map(t -> t.getCreated())
-//                .filter(d -> d.compareTo())
-//                .reduce(0, (sum, current) -> sum = sum.(current)));
+
+        long sumDaysTasks = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .map(t -> ChronoUnit.DAYS.between(t.getCreated(), LocalDate.now()))
+                .mapToLong(Long::intValue)
+                .sum();
+
+        double result = sumDaysTasks / quantityTasks;
+
         //Then
         Assert.assertEquals(3, quantityTasks);
-
+        Assert.assertEquals(30, sumDaysTasks);
+        Assert.assertEquals(10.0, result, 0.001);
     }
 }
