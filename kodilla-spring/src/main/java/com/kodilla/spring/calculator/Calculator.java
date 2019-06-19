@@ -27,6 +27,4 @@ public class Calculator {
         display.displayValue(a / b);
         return a / b;
     }
-
-    
 }
