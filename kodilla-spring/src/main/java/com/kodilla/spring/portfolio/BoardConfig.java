@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 public class BoardConfig {
     @Bean
     public Board board() {
-        return new Board();
+        return new Board(toDoList(), inProgressList(), doneList());
     }
 
     @Bean
