@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.spring.portfolio.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-07-06T08:35:08" hostname="DESKTOP-VT08279" time="0.052">
+  <properties/>
+  <testcase name="testTaskAdd" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.052"/>
+  <system-out><![CDATA[2019-07-06 10:35:08.431  INFO 2604 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7aad9dc1: startup date [Sat Jul 06 10:35:08 CEST 2019]; root of context hierarchy
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
