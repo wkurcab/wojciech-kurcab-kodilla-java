@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-07-12T20:03:34" hostname="DESKTOP-VT08279" time="0.214">
+  <properties/>
+  <testcase name="testAdvStatisticsWithMockCommentsMoreThanPosts" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.206"/>
+  <testcase name="testAdvStatisticsWithMock100Users" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.003"/>
+  <testcase name="testAdvStatisticsWithMock1000Posts" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testAdvStatisticsWithMock0Posts" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.001"/>
+  <testcase name="testAdvStatisticsWithMock0Users" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.0"/>
+  <testcase name="testAdvStatisticsWithMockCommentsLessThanPosts" classname="com.kodilla.testing.forum.statistics.AdvStatisticsTestSuite" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
