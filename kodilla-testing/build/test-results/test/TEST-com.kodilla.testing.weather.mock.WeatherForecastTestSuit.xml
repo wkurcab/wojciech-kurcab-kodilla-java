@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.weather.mock.WeatherForecastTestSuit" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-09T10:08:59" hostname="DESKTOP-VT08279" time="0.005">
-  <properties/>
-  <testcase name="testCalculatedForecastWithMock" classname="com.kodilla.testing.weather.mock.WeatherForecastTestSuit" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
