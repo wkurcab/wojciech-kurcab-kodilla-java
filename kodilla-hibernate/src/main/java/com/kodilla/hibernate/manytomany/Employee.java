@@ -5,6 +5,10 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Employee.searchEmployeeWithGivenName",
+        query = "FROM Employee WHERE lastName LIKE :LASTNAME"
+)
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -54,7 +58,8 @@ public class Employee {
     }
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "JOIN_COMPANY_EMPLOYEE",
+    @JoinTable(
+            name = "JOIN_COMPANY_EMPLOYEE",
             joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")},
             inverseJoinColumns = {@JoinColumn(name = "COMPANY_ID", referencedColumnName = "ID")}
     )
