@@ -144,7 +144,7 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> searchCompanyName = companyDao.searchCompanyWithGivenCharacter("Sof%");
+        List<Company> searchCompanyName = companyDao.searchCompanyWithGivenCharacter("Sof");
 
         //Then
         Assert.assertEquals(1, searchCompanyName.size());

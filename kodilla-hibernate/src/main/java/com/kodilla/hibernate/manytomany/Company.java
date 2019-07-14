@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.searchCompanyWithGivenCharacter",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE :COMPANYNAME",
+        query = "SELECT * FROM COMPANIES WHERE LEFT(COMPANY_NAME, 3) = :COMPANYNAME",
         resultClass = Company.class
 )
 @Entity
