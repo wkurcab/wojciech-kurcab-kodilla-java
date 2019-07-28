@@ -8,9 +8,7 @@ public class Application {
         FlightRetriever flightRetriever = new FlightRetriever();
         ListOfFlights listOfFlights = flightRetriever.retrieve();
 
-        String searchFlightFrom;
-        String searchFlightTo;
-        String searchFlightStopover;
+        SearchFlight searchFlight = new SearchFlight();
 
         System.out.println("[1] - wyszukaj loty do ...");
         System.out.println("[2] - wyszukaj loty z ...");
@@ -21,34 +19,13 @@ public class Application {
 
         switch (selectionCryteria) {
             case 1:
-                System.out.print("Wyszukaj loty do: ");
-                searchFlightTo = scanner.next();
-
-                System.out.println("\nLista lotów:\n");
-
-                listOfFlights.getTheFlightList().stream()
-                        .filter(flight -> flight.getFlightTo().equals(searchFlightTo))
-                        .forEach(System.out::println);
+                searchFlight.findFlightTo(listOfFlights, scanner);
                 break;
             case 2:
-                System.out.print("Wyszukaj loty z: ");
-                searchFlightFrom = scanner.next();
-
-                System.out.println("\nLista lotów:\n");
-
-                listOfFlights.getTheFlightList().stream()
-                        .filter(flight -> flight.getFlightFrom().equals(searchFlightFrom))
-                        .forEach(System.out::println);
+                searchFlight.findFlightFrom(listOfFlights, scanner);
                 break;
             case 3:
-                System.out.print("Wyszukaj loty z międzylądowaniem w: ");
-                searchFlightStopover = scanner.next();
-
-                System.out.println("\nLista lotów:\n");
-
-                listOfFlights.getTheFlightList().stream()
-                        .filter(flight -> flight.getFlightStopover().equals(searchFlightStopover))
-                        .forEach(System.out::println);
+                searchFlight.findFlightStopover(listOfFlights, scanner);
                 break;
         }
     }

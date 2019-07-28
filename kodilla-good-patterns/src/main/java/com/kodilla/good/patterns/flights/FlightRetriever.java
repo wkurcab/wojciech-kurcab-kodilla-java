@@ -6,17 +6,17 @@ import java.util.List;
 public class FlightRetriever {
 
     public ListOfFlights retrieve() {
-        Flight flight = new Flight("Warsow", "Cracow", "");
+        Flight flight = new Flight("Warsaw", "Cracow", "");
         Flight flight1 = new Flight("Gdansk", "Cracow", "Warsaw");
         Flight flight2 = new Flight("Cracow", "Warsaw", "");
-        Flight flight3 = new Flight("Cracow", "Gdansk", "Warsow");
-        Flight flight4 = new Flight("Warsow", "Cracow", "");
+        Flight flight3 = new Flight("Cracow", "Gdansk", "Warsaw");
+        Flight flight4 = new Flight("Warsaw", "Wroclaw", "");
         Flight flight5 = new Flight("Wroclaw", "Cracow", "");
         Flight flight6 = new Flight("Cracow", "Wroclaw", "");
         Flight flight7 = new Flight("Poznan", "Cracow", "");
         Flight flight8 = new Flight("Cracow", "Poznan", "");
-        Flight flight9 = new Flight("Warsow", "Poznan", "");
-        Flight flight10 = new Flight("Poznan", "Warsow", "");
+        Flight flight9 = new Flight("Warsaw", "Poznan", "");
+        Flight flight10 = new Flight("Poznan", "Warsaw", "");
         Flight flight11 = new Flight("Poznan", "Wroclaw", "");
         Flight flight12 = new Flight("Wroclaw", "Poznan", "");
 
