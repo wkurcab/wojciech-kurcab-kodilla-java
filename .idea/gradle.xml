@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -14,6 +15,8 @@
             <option value="$PROJECT_DIR$/kodilla-hibernate" />
             <option value="$PROJECT_DIR$/kodilla-jdbc" />
             <option value="$PROJECT_DIR$/kodilla-patterns" />
+            <option value="$PROJECT_DIR$/kodilla-patterns2" />
+            <option value="$PROJECT_DIR$/kodilla-rps" />
             <option value="$PROJECT_DIR$/kodilla-spring" />
             <option value="$PROJECT_DIR$/kodilla-spring-intro" />
             <option value="$PROJECT_DIR$/kodilla-spring-web" />
@@ -21,6 +24,11 @@
             <option value="$PROJECT_DIR$/kodilla-testing" />
           </set>
         </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="D:\_P_WKurcab\P_rogramowanie\_Kodilla\kodilla-course\kodilla-patterns2" />
         <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
