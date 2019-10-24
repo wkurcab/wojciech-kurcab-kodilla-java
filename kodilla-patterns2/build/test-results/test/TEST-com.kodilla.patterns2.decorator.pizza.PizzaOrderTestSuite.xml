@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-10-24T13:56:58" hostname="PL-08818-L2979" time="0.008">
+  <properties/>
+  <testcase name="testSupremePizzaOrderGetDescription" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.003"/>
+  <testcase name="testBasicPizzaOrderGetDescription" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.0"/>
+  <testcase name="testPizzaOrderWithHamOnionMushroomsBaconExtraCheeseGetCost" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.003"/>
+  <testcase name="testSupremePizzaOrderGetCost" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.001"/>
+  <testcase name="testPizzaOrderWithHamOnionMushroomsBaconExtraCheeseGetDescription" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.0"/>
+  <testcase name="testBasicPizzaOrderGetCost" classname="com.kodilla.patterns2.decorator.pizza.PizzaOrderTestSuite" time="0.0"/>
+  <system-out><![CDATA[Pizza (tomato sausage, cheese) SUPREME 
+beef, pepperoni, onion, green paprik, mushrooms, mozzarella.
+Pizza (tomato sausage, cheese)
+Pizza (tomato sausage, cheese), ham, onion, mushrooms, bacon with extra cheese
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
