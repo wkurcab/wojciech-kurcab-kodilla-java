@@ -18,8 +18,6 @@ public class SearchFacade {
     @Autowired
     private EmployeeDtoDao employeeDtoDao;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SearchFacade.class);
-
     public List<CompanyDto> searchCompanyWithGivenLetter(String letters) {
         return companyDtoDao.searchCompanyWithGivenLetter(letters);
     }

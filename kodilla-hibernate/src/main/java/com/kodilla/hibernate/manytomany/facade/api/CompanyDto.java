@@ -26,7 +26,8 @@ public class CompanyDto {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
+    @GeneratedValue
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;
@@ -37,7 +38,7 @@ public class CompanyDto {
         return companyName;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companiesList")
     public List<EmployeeDto> getEmployeesList() {
         return employeesList;
     }

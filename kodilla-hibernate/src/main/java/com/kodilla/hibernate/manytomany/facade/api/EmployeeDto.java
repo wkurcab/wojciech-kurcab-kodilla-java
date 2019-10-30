@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "EmployeeDto.searchEmployeeWithGivenLetter",
-        query = "SELECT * FROM EMPLOYEE WHERE LASTNAME LIKE CONCAT('%', :LASTNAME, '%')",
+        query = "SELECT * FROM EMPLOYEES WHERE LASTNAME LIKE CONCAT('%', :LAST_NAME, '%')",
         resultClass = EmployeeDto.class
 )
 
@@ -29,7 +29,6 @@ public class EmployeeDto {
 
     @Id
     @GeneratedValue
-    @NotNull
     @Column(name = "ID", unique = true)
     public int getId() {
         return id;

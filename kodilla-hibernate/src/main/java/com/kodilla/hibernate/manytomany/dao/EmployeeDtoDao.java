@@ -13,5 +13,5 @@ import java.util.List;
 @Repository
 public interface EmployeeDtoDao extends CrudRepository<EmployeeDto, Integer> {
     @Query(nativeQuery = true)
-    List<EmployeeDto> searchEmployeeWithGivenLetter(@Param("LASTNAME") String lastName);
+    List<EmployeeDto> searchEmployeeWithGivenLetter(@Param("LAST_NAME") String lastName);
 }
