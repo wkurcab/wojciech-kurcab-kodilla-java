@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-10-27T12:29:48" hostname="DESKTOP-VT08279" time="0.012">
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-11-05T10:44:43" hostname="PL-08818-L2979" time="0.005">
   <properties/>
-  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.012"/>
+  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.005"/>
   <system-out><![CDATA[Library of Congress, Washington
 []
 Trinity College Library, Dublin
 []
 British Library, London
-[Book{title='Rainmaker', author='John Grisham', publicationDate=1995-10-20}, Book{title='The Innocent Man', author='John Grisham', publicationDate=2006-10-10}, Book{title='The Summons', author='John Grisham', publicationDate=2002-01-07}, Book{title='The Associate', author='John Grisham', publicationDate=2009-01-27}, Book{title='The Street Lawyer', author='John Grisham', publicationDate=1998-09-27}, Book{title='The Appeal', author='John Grisham', publicationDate=2008-01-29}, Book{title='The Firm', author='John Grisham', publicationDate=1993-02-01}, Book{title='The Last Juror', author='John Grisham', publicationDate=2004-02-03}]
+[Book{title='The Innocent Man', author='John Grisham', publicationDate=2006-10-10}, Book{title='The Associate', author='John Grisham', publicationDate=2009-01-27}, Book{title='The Last Juror', author='John Grisham', publicationDate=2004-02-03}, Book{title='The Summons', author='John Grisham', publicationDate=2002-01-07}, Book{title='The Appeal', author='John Grisham', publicationDate=2008-01-29}, Book{title='The Street Lawyer', author='John Grisham', publicationDate=1998-09-27}, Book{title='The Firm', author='John Grisham', publicationDate=1993-02-01}, Book{title='Rainmaker', author='John Grisham', publicationDate=1995-10-20}]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
